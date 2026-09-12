@@ -4,77 +4,1459 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>MD Floor Coverings | Brisbane & Gold Coast Flooring</title>
+  <title>MD Floor Coverings | Brisbane & Gold Coast Flooring Installer</title>
 
-  <meta name="description" content="MD Floor Coverings provides professional flooring installation across Brisbane and the Gold Coast. Vinyl, hybrid, carpet tiles, lino, rubber flooring and floor preparation.">
+  <meta name="description" content="MD Floor Coverings provides professional flooring installation across Brisbane and the Gold Coast. 20 years' experience in vinyl, vinyl planks, hybrid, rubber, carpet tiles, lino and floor preparation.">
 
   <style>
+    :root {
+      --navy: #06295f;
+      --deep-navy: #031a3e;
+      --blue: #087bc1;
+      --cyan: #15b5e9;
+      --ice: #edf8fc;
+      --white: #ffffff;
+      --text: #172033;
+      --muted: #687287;
+      --border: #dfe8ef;
+      --shadow: 0 18px 50px rgba(4, 35, 77, 0.13);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: #ffffff;
-      color: #0a214f;
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    .hero {
-      min-height: 100vh;
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* NAVIGATION */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(6,41,95,0.08);
+    }
+
+    .nav {
+      min-height: 78px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-      box-sizing: border-box;
+      justify-content: space-between;
+      gap: 30px;
     }
 
-    .hero-content {
-      max-width: 800px;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      text-decoration: none;
+      font-weight: 800;
+      color: var(--navy);
     }
 
-    h1 {
-      font-size: 56px;
-      margin-bottom: 20px;
+    .brand img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(6,41,95,0.18);
     }
 
-    p {
-      font-size: 22px;
-      line-height: 1.5;
-      color: #555;
+    .brand-text {
+      font-size: 18px;
+      letter-spacing: -0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      color: #344056;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-quote {
+      background: var(--navy);
+      color: white !important;
+      padding: 12px 19px;
+      border-radius: 999px;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(21,181,233,0.18), transparent 30%),
+        linear-gradient(135deg, #f8fcff 0%, #ffffff 50%, #edf8fc 100%);
+      padding: 72px 0 78px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 430px;
+      height: 430px;
+      border-radius: 50%;
+      background: rgba(8,123,193,0.06);
+      left: -210px;
+      top: -160px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 3px;
+      border-radius: 20px;
+      background: linear-gradient(90deg, var(--navy), var(--cyan));
+    }
+
+    .hero h1 {
+      margin: 0;
+      color: var(--deep-navy);
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -3.5px;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero-intro {
+      max-width: 650px;
+      margin: 26px 0 0;
+      color: #536076;
+      font-size: 20px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 32px;
     }
 
     .button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 16px 28px;
-      background: #0877bd;
-      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 12px;
       text-decoration: none;
-      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: white;
+      box-shadow: 0 12px 26px rgba(6,41,95,0.22);
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(6,41,95,0.28);
+    }
+
+    .button-secondary {
+      background: white;
+      color: var(--navy);
+      border: 1px solid #cad9e4;
+    }
+
+    .button-secondary:hover {
+      border-color: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 38px;
+      padding-top: 28px;
+      border-top: 1px solid #d8e6ee;
+    }
+
+    .proof-item strong {
+      display: block;
+      font-size: 24px;
+      color: var(--navy);
+      line-height: 1.1;
+    }
+
+    .proof-item span {
+      display: block;
+      margin-top: 5px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* HERO VISUAL */
+
+    .hero-visual {
+      position: relative;
+      min-height: 560px;
+    }
+
+    .hero-photo {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 82%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 28px;
+      box-shadow: 0 26px 70px rgba(3,26,62,0.22);
+    }
+
+    .logo-card {
+      position: absolute;
+      left: 0;
+      bottom: 4px;
+      width: 215px;
+      padding: 18px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 24px 54px rgba(3,26,62,0.22);
+      transform: perspective(900px) rotateY(5deg) rotateX(2deg);
+    }
+
+    .logo-card img {
+      width: 100%;
+      border-radius: 17px;
+      box-shadow:
+        0 15px 26px rgba(3,26,62,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.7);
+    }
+
+    .logo-card p {
+      margin: 12px 4px 1px;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    /* TRUST STRIP */
+
+    .trust-strip {
+      background: var(--deep-navy);
+      color: white;
+    }
+
+    .trust-grid {
+      min-height: 98px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: center;
+    }
+
+    .trust-item {
+      text-align: center;
+      padding: 20px;
+      border-right: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 15px;
+    }
+
+    .trust-item span {
+      display: block;
+      margin-top: 3px;
+      color: rgba(255,255,255,0.68);
+      font-size: 12px;
+    }
+
+    /* GENERIC SECTIONS */
+
+    section {
+      scroll-margin-top: 90px;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section-soft {
+      background: #f6fafc;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 46px;
+    }
+
+    .section-heading.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: var(--deep-navy);
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .section-heading p {
+      margin: 17px 0 0;
+      color: var(--muted);
       font-size: 18px;
+    }
+
+    /* SERVICES */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 215px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: white;
+      transition: 0.22s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: transparent;
+    }
+
+    .service-number {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--ice);
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .service-card h3 {
+      margin: 24px 0 8px;
+      color: var(--navy);
+      font-size: 21px;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* WORK */
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .work-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      background: var(--deep-navy);
+      box-shadow: 0 14px 35px rgba(3,26,62,0.12);
+    }
+
+    .work-card.large {
+      grid-column: span 2;
+    }
+
+    .work-card img {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .work-card.large img {
+      height: 470px;
+    }
+
+    .work-card:hover img {
+      transform: scale(1.035);
+    }
+
+    .work-overlay {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 70px 24px 23px;
+      color: white;
+      background: linear-gradient(transparent, rgba(3,26,62,0.9));
+    }
+
+    .work-overlay h3 {
+      margin: 0;
+      font-size: 19px;
+    }
+
+    .work-overlay span {
+      display: block;
+      margin-top: 4px;
+      color: rgba(255,255,255,0.72);
+      font-size: 13px;
+    }
+
+    /* EXPERIENCE */
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .experience-image {
+      position: relative;
+    }
+
+    .experience-image img {
+      width: 100%;
+      height: 570px;
+      object-fit: cover;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .experience-badge {
+      position: absolute;
+      right: -20px;
+      bottom: 32px;
+      width: 155px;
+      height: 155px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-radius: 50%;
+      color: white;
+      background: linear-gradient(135deg, var(--navy), var(--cyan));
+      box-shadow: 0 18px 38px rgba(6,41,95,0.28);
+    }
+
+    .experience-badge strong {
+      display: block;
+      font-size: 38px;
+      line-height: 1;
+    }
+
+    .experience-badge span {
+      display: block;
+      font-size: 12px;
+      line-height: 1.2;
+      margin-top: 5px;
+    }
+
+    .experience-copy h2 {
+      margin: 0;
+      color: var(--deep-navy);
+      font-size: clamp(36px, 5vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .experience-copy p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 26px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: #35425a;
+      font-weight: 700;
+    }
+
+    .check {
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--ice);
+      color: var(--blue);
+      font-size: 13px;
+      margin-top: 1px;
+    }
+
+    /* PROCESS */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .process-card {
+      padding: 30px;
+      border-radius: 22px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .process-step {
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .process-card h3 {
+      margin: 10px 0 8px;
+      color: var(--navy);
+      font-size: 20px;
+    }
+
+    .process-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* INSTAGRAM */
+
+    .instagram-panel {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 440px;
+      border-radius: 30px;
+      background: var(--deep-navy);
+      box-shadow: var(--shadow);
+    }
+
+    .instagram-copy {
+      padding: 60px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .instagram-copy .eyebrow {
+      color: var(--cyan);
+    }
+
+    .instagram-copy h2 {
+      margin: 0;
+      font-size: clamp(36px, 5vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .instagram-copy p {
+      max-width: 520px;
+      color: rgba(255,255,255,0.72);
+      font-size: 17px;
+    }
+
+    .instagram-copy .button {
+      margin-top: 14px;
+      align-self: flex-start;
+      background: white;
+      color: var(--navy);
+    }
+
+    .instagram-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .instagram-images img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background:
+        linear-gradient(135deg, rgba(3,26,62,0.98), rgba(8,123,193,0.96)),
+        url("images/mdfloor-10.jpg") center/cover;
+      color: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .contact h2 {
+      margin: 0;
+      font-size: clamp(38px, 6vw, 62px);
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .contact p {
+      margin: 17px 0 0;
+      max-width: 700px;
+      color: rgba(255,255,255,0.76);
+      font-size: 18px;
+    }
+
+    .contact-actions {
+      display: grid;
+      gap: 12px;
+      min-width: 220px;
+    }
+
+    .contact-actions .button {
+      background: white;
+      color: var(--navy);
+    }
+
+    .contact-actions .button:last-child {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.38);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 52px 0 90px;
+      background: #02132d;
+      color: white;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 50px;
+    }
+
+    .footer-brand {
+      max-width: 420px;
+    }
+
+    .footer-logo {
+      width: 80px;
+      border-radius: 14px;
+      margin-bottom: 18px;
+    }
+
+    footer h4 {
+      margin: 0 0 14px;
+      font-size: 14px;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    footer p,
+    footer a {
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 8px;
+    }
+
+    /* MOBILE BAR */
+
+    .mobile-bar {
+      display: none;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 980px) {
+      .nav-links a:not(.nav-quote) {
+        display: none;
+      }
+
+      .hero-grid,
+      .experience-grid,
+      .instagram-panel,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 50px;
+      }
+
+      .hero-visual {
+        margin-top: 20px;
+      }
+
+      .services-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .work-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .work-card.large {
+        grid-column: span 1;
+      }
+
+      .contact-actions {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .site-header {
+        position: static;
+      }
+
+      .nav {
+        min-height: 70px;
+      }
+
+      .brand-text {
+        font-size: 15px;
+      }
+
+      .brand img {
+        width: 44px;
+        height: 44px;
+      }
+
+      .nav-quote {
+        font-size: 13px !important;
+        padding: 10px 14px;
+      }
+
+      .hero {
+        padding: 42px 0 48px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        letter-spacing: -2.5px;
+      }
+
+      .hero-intro {
+        font-size: 17px;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero-proof {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+
+      .hero-visual {
+        min-height: 470px;
+      }
+
+      .hero-photo {
+        width: 91%;
+        height: 405px;
+      }
+
+      .logo-card {
+        width: 150px;
+        padding: 11px;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .trust-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .section {
+        padding: 68px 0;
+      }
+
+      .services-grid,
+      .work-grid,
+      .process-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .work-card img,
+      .work-card.large img {
+        height: 370px;
+      }
+
+      .experience-image img {
+        height: 470px;
+      }
+
+      .experience-badge {
+        right: -4px;
+        width: 130px;
+        height: 130px;
+      }
+
+      .experience-badge strong {
+        font-size: 31px;
+      }
+
+      .instagram-copy {
+        padding: 42px 28px;
+      }
+
+      .instagram-images img {
+        height: 175px;
+      }
+
+      .contact-actions {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        padding-bottom: 105px;
+      }
+
+      .mobile-bar {
+        position: fixed;
+        z-index: 2000;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 8px;
+        border-radius: 18px;
+        background: rgba(3,26,62,0.96);
+        box-shadow: 0 16px 40px rgba(3,26,62,0.3);
+        backdrop-filter: blur(10px);
+      }
+
+      .mobile-bar a {
+        min-height: 48px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .mobile-call {
+        color: var(--deep-navy);
+        background: white;
+      }
+
+      .mobile-quote {
+        color: white;
+        background: var(--blue);
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <section class="hero">
-    <div class="hero-content">
+  <header class="site-header">
+    <div class="container nav">
 
-      <h1>MD Floor Coverings</h1>
-
-      <p>
-        Professional flooring installation across Brisbane and the Gold Coast.
-      </p>
-
-      <p>
-        Vinyl • Vinyl Planks • Hybrid • Rubber • Carpet Tiles • Lino • Floor Preparation
-      </p>
-
-      <a class="button" href="#">
-        Get a Free Quote
+      <a class="brand" href="#top">
+        <img src="images/MD%20Floor%20Logo.png" alt="MD Floor Coverings logo">
+        <span class="brand-text">MD Floor Coverings</span>
       </a>
 
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#work">Our Work</a>
+        <a href="#about">About</a>
+        <a href="#instagram">Instagram</a>
+        <a class="nav-quote" href="#contact">Get a Quote</a>
+      </nav>
+
     </div>
-  </section>
+  </header>
+
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+          <div class="eyebrow">Brisbane & Gold Coast</div>
+
+          <h1>
+            Floors installed
+            <span>properly.</span>
+          </h1>
+
+          <p class="hero-intro">
+            Professional flooring installation backed by 20 years of hands-on experience.
+            Vinyl, hybrid, carpet tiles, lino, rubber flooring and specialist floor preparation.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">Get a Free Quote</a>
+            <a class="button button-secondary" href="tel:+61434366726">Call Dan: 0434 366 726</a>
+          </div>
+
+          <div class="hero-proof">
+            <div class="proof-item">
+              <strong>20+</strong>
+              <span>Years' experience</span>
+            </div>
+
+            <div class="proof-item">
+              <strong>GC</strong>
+              <span>Gold Coast</span>
+            </div>
+
+            <div class="proof-item">
+              <strong>BNE</strong>
+              <span>Brisbane</span>
+            </div>
+
+            <div class="proof-item">
+              <strong>7+</strong>
+              <span>Flooring services</span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="hero-visual">
+
+          <img
+            class="hero-photo"
+            src="images/mdfloor-08.jpg"
+            alt="Completed timber-look flooring installation by MD Floor Coverings"
+          >
+
+          <div class="logo-card">
+            <img
+              src="images/MD%20Floor%20Logo.png"
+              alt="MD Floor Coverings"
+            >
+            <p>Flooring installation & preparation</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <div class="trust-strip">
+      <div class="container trust-grid">
+
+        <div class="trust-item">
+          <strong>Vinyl & Vinyl Planks</strong>
+          <span>Residential and commercial</span>
+        </div>
+
+        <div class="trust-item">
+          <strong>Hybrid Flooring</strong>
+          <span>Professional installation</span>
+        </div>
+
+        <div class="trust-item">
+          <strong>Floor Preparation</strong>
+          <span>Grinding and substrate prep</span>
+        </div>
+
+        <div class="trust-item">
+          <strong>Direct Contact</strong>
+          <span>Deal directly with Dan</span>
+        </div>
+
+      </div>
+    </div>
+
+
+    <section class="section" id="services">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">What we do</div>
+          <h2>From floor preparation to the finished surface.</h2>
+          <p>
+            A professional floor starts underneath the flooring itself.
+            MD Floor Coverings handles both preparation and installation across a wide range of flooring systems.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card">
+            <div class="service-number">01</div>
+            <h3>Vinyl Planks</h3>
+            <p>Clean, durable flooring installation for residential and commercial spaces.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">02</div>
+            <h3>Hybrid Flooring</h3>
+            <p>Modern floating-floor solutions installed with careful layout and finishing.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">03</div>
+            <h3>Sheet Vinyl & Lino</h3>
+            <p>Professional installation for practical, hard-wearing interior spaces.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">04</div>
+            <h3>Rubber Flooring</h3>
+            <p>Durable specialist surfaces for commercial, fitness and high-use areas.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">05</div>
+            <h3>Carpet Tiles</h3>
+            <p>Commercial and practical flooring installations with clean alignment and finish.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">06</div>
+            <h3>Floor Grinding</h3>
+            <p>Mechanical preparation to help produce a clean, stable substrate before installation.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">07</div>
+            <h3>Floor Preparation</h3>
+            <p>Levelling, preparation and substrate work before the finished flooring is installed.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">08</div>
+            <h3>Residential & Commercial</h3>
+            <p>Flooring work across homes, workplaces, retail, venues and other commercial spaces.</p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="section section-soft" id="work">
+      <div class="container">
+
+        <div class="section-heading center">
+          <div class="eyebrow">Recent work</div>
+          <h2>Real flooring. Real projects.</h2>
+          <p>
+            A selection of MD Floor Coverings projects across residential and commercial environments.
+          </p>
+        </div>
+
+        <div class="work-grid">
+
+          <article class="work-card large">
+            <img src="images/mdfloor-07.jpg" alt="Completed timber-look floor overlooking balcony">
+            <div class="work-overlay">
+              <h3>Residential flooring</h3>
+              <span>Clean installation and finish</span>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <img src="images/mdfloor-10.jpg" alt="Completed timber flooring installation">
+            <div class="work-overlay">
+              <h3>Timber-look finish</h3>
+              <span>Residential project</span>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <img src="images/mdfloor-17.jpg" alt="Completed patterned flooring installation">
+            <div class="work-overlay">
+              <h3>Detailed installation</h3>
+              <span>Precision layout</span>
+            </div>
+          </article>
+
+          <article class="work-card large">
+            <img src="images/mdfloor-25.jpg" alt="Completed timber-look flooring">
+            <div class="work-overlay">
+              <h3>Modern interior flooring</h3>
+              <span>Finished installation</span>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <img src="images/mdfloor-02.jpg" alt="Commercial flooring installation under blue lighting">
+            <div class="work-overlay">
+              <h3>Commercial flooring</h3>
+              <span>High-use environment</span>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <img src="images/mdfloor-03.jpg" alt="Commercial flooring installation">
+            <div class="work-overlay">
+              <h3>Commercial finish</h3>
+              <span>Clean, durable surface</span>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="section" id="about">
+      <div class="container experience-grid">
+
+        <div class="experience-image">
+
+          <img
+            src="images/mdfloor-21.jpg"
+            alt="Commercial floor installation in progress"
+          >
+
+          <div class="experience-badge">
+            <div>
+              <strong>20+</strong>
+              <span>years of flooring experience</span>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="experience-copy">
+
+          <div class="eyebrow">Experience matters</div>
+
+          <h2>The finished floor is only as good as the preparation beneath it.</h2>
+
+          <p>
+            MD Floor Coverings is operated by Dan Discombe, bringing more than 20 years of flooring installation experience to projects across Brisbane and the Gold Coast.
+          </p>
+
+          <p>
+            From substrate preparation and floor grinding through to the final installed surface, the focus is on practical preparation, accurate installation and a clean finished result.
+          </p>
+
+          <div class="check-list">
+
+            <div class="check-item">
+              <span class="check">✓</span>
+              <span>More than 20 years of flooring experience</span>
+            </div>
+
+            <div class="check-item">
+              <span class="check">✓</span>
+              <span>Residential and commercial flooring</span>
+            </div>
+
+            <div class="check-item">
+              <span class="check">✓</span>
+              <span>Floor preparation and grinding capability</span>
+            </div>
+
+            <div class="check-item">
+              <span class="check">✓</span>
+              <span>Servicing Brisbane and the Gold Coast</span>
+            </div>
+
+          </div>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="tel:+61434366726">Talk to Dan</a>
+            <a class="button button-secondary" href="#work">See Recent Work</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="section section-soft">
+      <div class="container">
+
+        <div class="section-heading center">
+          <div class="eyebrow">Simple process</div>
+          <h2>From enquiry to finished floor.</h2>
+        </div>
+
+        <div class="process-grid">
+
+          <article class="process-card">
+            <div class="process-step">Step 01</div>
+            <h3>Tell us about the job</h3>
+            <p>Share the flooring type, suburb and approximate size of the area.</p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-step">Step 02</div>
+            <h3>Measure & assess</h3>
+            <p>The space, existing floor and preparation requirements can be assessed.</p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-step">Step 03</div>
+            <h3>Confirm the quote</h3>
+            <p>Scope, preparation and flooring requirements are confirmed before work begins.</p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-step">Step 04</div>
+            <h3>Installation</h3>
+            <p>The floor is prepared, installed and finished for the completed result.</p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="section" id="instagram">
+      <div class="container">
+
+        <div class="instagram-panel">
+
+          <div class="instagram-copy">
+
+            <div class="eyebrow">Follow the work</div>
+
+            <h2>@mdfloorcoverings</h2>
+
+            <p>
+              Follow MD Floor Coverings on Instagram for recent installations, floor preparation and current projects across Brisbane and the Gold Coast.
+            </p>
+
+            <a
+              class="button"
+              href="https://www.instagram.com/mdfloorcoverings/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Instagram
+            </a>
+
+          </div>
+
+
+          <div class="instagram-images">
+
+            <img src="images/mdfloor-20.jpg" alt="Recent MD Floor Coverings project">
+            <img src="images/mdfloor-09.jpg" alt="Recent MD Floor Coverings commercial project">
+            <img src="images/mdfloor-13.jpg" alt="Recent MD Floor Coverings installation">
+            <img src="images/mdfloor-29.jpg" alt="Detailed flooring finish">
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+
+        <div>
+          <div class="eyebrow">Ready to get started?</div>
+
+          <h2>Tell Dan about your floor.</h2>
+
+          <p>
+            For an initial quote, have your suburb, approximate square metres and preferred flooring type ready. We will add the full online quote form next.
+          </p>
+        </div>
+
+        <div class="contact-actions">
+
+          <a class="button" href="tel:+61434366726">
+            Call 0434 366 726
+          </a>
+
+          <a class="button" href="mailto:danieldiscombe@hotmail.co.uk">
+            Email Dan
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+
+        <img
+          class="footer-logo"
+          src="images/MD%20Floor%20Logo.png"
+          alt="MD Floor Coverings"
+        >
+
+        <h4>MD Floor Coverings</h4>
+
+        <p>
+          Professional flooring installation and floor preparation across Brisbane and the Gold Coast.
+        </p>
+
+      </div>
+
+
+      <div>
+        <h4>Contact</h4>
+
+        <div class="footer-links">
+          <a href="tel:+61434366726">0434 366 726</a>
+          <a href="mailto:danieldiscombe@hotmail.co.uk">danieldiscombe@hotmail.co.uk</a>
+          <a href="https://www.instagram.com/mdfloorcoverings/" target="_blank" rel="noopener noreferrer">
+            Instagram
+          </a>
+        </div>
+      </div>
+
+
+      <div>
+        <h4>Services</h4>
+
+        <div class="footer-links">
+          <span>Vinyl</span>
+          <span>Vinyl Planks</span>
+          <span>Hybrid</span>
+          <span>Rubber</span>
+          <span>Carpet Tiles</span>
+          <span>Lino</span>
+          <span>Floor Grinding & Preparation</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <div class="mobile-bar">
+    <a class="mobile-call" href="tel:+61434366726">Call Dan</a>
+    <a class="mobile-quote" href="#contact">Get a Quote</a>
+  </div>
 
 </body>
 </html>
